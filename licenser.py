@@ -17,21 +17,22 @@ time.sleep(60)
 
 # Convert the browser html to a soup object and find the latest title
 element = browser.find_option_by_text('Georgia').first.click()
-time.sleep(60)
+time.sleep(10)
 
 
 #indiviual select
-time.sleep(60)
+
 type_element = browser.find_by_xpath('//*[@id="entityTypes"]/div[2]/input[2]').first
 type_element.click()
 
 #final
-alpa_list=[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+alpa_list=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 licenser=[]
 for i in alpa_list:
     for j in alpa_list:
         try:
             name_city=i+j
+            print(name_city)
             input_element = browser.find_by_name('lastName')
             input_element.fill(name_city)
             time.sleep(10)
@@ -42,7 +43,7 @@ for i in alpa_list:
             #license type
             license_element = browser.find_by_xpath('//*[@id="border"]/form[3]/div[6]/div[3]/select/option[21]').first
             license_element.click()
-            time.sleep(60)
+            time.sleep(10)
             #result 100
             element = browser.find_option_by_text('100').first.click()
             #//*[@id="resultsPerPage"]/select
